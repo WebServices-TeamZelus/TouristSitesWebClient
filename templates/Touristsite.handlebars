@@ -18,10 +18,10 @@
 		<div class="container">
 			<!-- Top Navigation -->
 			<header class="codrops-header">
-				<svg width="1000px" height="300px" class="polaroid"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300" background-image = url("../../img/17.jpg")>
+				<div id="header-img" width="1000px" height="300px" class="polaroid"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300" background-image = url("../../img/14jpg")>
 
-				</svg>
-				<h1>{{touristsite.name}} <span>Web Services Team "Zelus"</span></h1>
+				</div>
+				<h1>{{this.name}} <span>Web Services Team "Zelus"</span></h1>
 			</header>
 			<div class="description">
 				<div class="btn-map">
@@ -33,13 +33,13 @@
 						<div class="btn-login">
 							<input type="image" src="../img/login.png" alt="Submit" width="130" height="90">
 							</div>
-			<p>{{touristsite.description}}</p>
+			<p>{{this.description}}</p>
 				</div>
 			<section id="photostack-1" class="photostack photostack-start">
 				<div>
-					{{#each image}}
+					{{#each this.images}}
 					<figure>
-						<a class="photostack-img"><img src={{this.src}} alt={{this.id}}/></a>
+						<a class="photostack-img"><img src={{this.Url}} /></a>
 						<figcaption>
 							<h2 class="photostack-title">{{this.touristsite}}</h2>
 						</figcaption>

@@ -3,17 +3,11 @@ var templates = (function() {
         Handlebars = window.handlebars || window.Handlebars;
 
     function get(name) {
-        debugger;
-        var promise = new Promise(function(resolve, reject) {
-            var url = '../templates/' + name + '.handelbars;';
-            console.log(url);
-            $.get(url, function(templateHtml) {
-                var template = handlebars.compile(templateHtml);
-                resolve(template);
-            });
-        });
-        return promise;
-    }
+                var template =  $('#' + name).html();
+
+                   return handlebars.compile(template);
+
+            };
 
     return {
         get : get
