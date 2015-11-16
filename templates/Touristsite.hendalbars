@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Scattered Polaroids Gallery</title>
+		<meta name="description" content="Scattered Polaroids Gallery: A flat-style take on a Polaroid gallery" />
+		<meta name="keywords" content="scattered polaroids, image gallery, javascript, random rotation, 3d, backface, flat design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<svg width="1000px" height="300px" class="polaroid"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300" background-image = url("../../img/17.jpg")>
+
+				</svg>
+				<h1>{{touristsite.name}} <span>Web Services Team "Zelus"</span></h1>
+			</header>
+			<div class="description">
+				<div class="btn-map">
+					<input type="image" src="../img/RouteMap.png" alt="Submit" width=150px" height="100x">
+					</div>
+				<div class="btn-acomodation">
+					<input type="image" src="../img/accomodation.png" alt="Submit" width="130" height="90">
+				</div>
+						<div class="btn-login">
+							<input type="image" src="../img/login.png" alt="Submit" width="130" height="90">
+							</div>
+			<p>{{touristsite.description}}</p>
+				</div>
+			<section id="photostack-1" class="photostack photostack-start">
+				<div>
+					{{#each image}}
+					<figure>
+						<a class="photostack-img"><img src={{this.src}} alt={{this.id}}/></a>
+						<figcaption>
+							<h2 class="photostack-title">{{this.touristsite}}</h2>
+						</figcaption>
+					</figure>
+					{{/each}}
+				</div>
+			</section>
+			<section class="description">
+				<p>The next examples show how to add a description to the back of the photo which can be viewed by flipping the Polaroid. To flip the Polaroid, <strong>the current navigation dot has to be clicked a second time</strong>. This functionality is indicated by a rotated arrow on the dot icon.</p>
+				<svg xmlns="http://www.w3.org/2000/svg" width="110px" height="110px" class="polaroid" preserveAspectRatio="xMidYMid meet" viewBox="0 0 300 300">
+					<!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+
+				</svg>
+				<p>Another configurable option for each item is the <strong>shuffle iteration count</strong> which defines how many times all items should be "spread", or shuffled, before the current photo moves to the middle. </p>
+			</section>
+			<section class="related">
+				<h3>Create:</h3>
+				<ul>
+					<li>Димитър Топалов - "topalkata"</li>
+					<li>Илияна Антова - "iliant"</li>
+					<li>Кристина Йовева - "KYoveva"</li>
+					<li>Любомир Свиленов - "LSvilenov"</li>
+					<li>Николай Атанасов - "ni4ka7a"</li>
+				</ul>
+
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/photostack.js"></script>
+		<script>
+			// [].slice.call( document.querySelectorAll( '.photostack' ) ).forEach( function( el ) { new Photostack( el ); } );
+			
+			new Photostack( document.getElementById( 'photostack-1' ), {
+				callback : function( item ) {
+					//console.log(item)
+				}
+			} );
+					</script>
+	</body>
+</html>
