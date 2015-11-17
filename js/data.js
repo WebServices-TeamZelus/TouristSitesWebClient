@@ -2,7 +2,7 @@ var data = (function () {
 
 	// Images
 	function getAllImages() {
-		return jsonRequester.get('http://touristsites.azurewebsites.net/api/images')
+		return jsonRequester.get('http://localhost:49502/api/images')
 			.then(function (res) {
 				return res;
 			});
@@ -10,7 +10,7 @@ var data = (function () {
 
 	// TouristSites
 	function getAllTouristSites() {
-		return jsonRequester.get('http://touristsites.azurewebsites.net/api/TouristSites')
+		return jsonRequester.get('http://localhost:49502/api/TouristSites')
 			.then(function (res) {
 				return res.result;
 			});
@@ -50,7 +50,7 @@ var data = (function () {
             }
         };
         
-        return jsonRequester.post('http://touristsites.azurewebsites.net/api/Account/Register', options)
+        return jsonRequester.post('http://localhost:49502/api/Account/Register', options)
             .then(function (res) {
                return res; 
             });
@@ -58,21 +58,34 @@ var data = (function () {
     
     
     function login(email, password) {
-         var options = {
-            data: {
+            var data= {
                 'username': email,
                 'password': password,
                 'grant_type': 'password'
-            },
-            headers: {
-                'Content-type': 'application/x-www-form-urlencoded'
-            }
-        };
+            };
+            
+            
+      var promise = new Promise(function(resolve, reject) {
+      $.ajax({
+        url: 'http://localhost:49502/Token',
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        data: data,
+        success: function(res) {
+          resolve(res);
+        },
+        error: function(err) {
+          reject(err);
+        }
+      });
+    });
+    
+    return promise;
         
-        return jsonRequester.post('http://touristsites.azurewebsites.net/Token', options)
-            .then(function (res) {
-               return res; 
-            });
+        // return jsonRequester.post('http://localhost:49502/Token', options)
+        //     .then(function (res) {
+        //        return res; 
+        //     });
     }
 
 
