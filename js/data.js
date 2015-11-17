@@ -1,8 +1,10 @@
 var data = (function () {
 
+    var baseUrl = 'http://bgtouristsites.azurewebsites.net/';
+
 	// Images
 	function getAllImages() {
-		return jsonRequester.get('http://localhost:49502/api/images')
+		return jsonRequester.get( baseUrl + 'api/images')
 			.then(function (res) {
 				return res;
 			});
@@ -10,14 +12,14 @@ var data = (function () {
 
 	// TouristSites
 	function getAllTouristSites() {
-		return jsonRequester.get('http://localhost:49502/api/TouristSites')
+		return jsonRequester.get(baseUrl + 'api/TouristSites')
 			.then(function (res) {
 				return res.result;
 			});
 	}
 	
 	function getTouristSitesById(id) {
-		return jsonRequester.get('http://touristsites.azurewebsites.net/api/TouristSites/' + id)
+		return jsonRequester.get(baseUrl + 'api/TouristSites/' + id)
 			.then(function (res) {
 				return res.result;
 			});
@@ -25,7 +27,7 @@ var data = (function () {
 	
 	//Cities
 	function getAllCities() {
-		return jsonRequester.get('http://touristsites.azurewebsites.net/api/Cities')
+		return jsonRequester.get(baseUrl + 'api/Cities')
 			.then(function (res) {
 				return res.result;
 			});
@@ -33,7 +35,7 @@ var data = (function () {
 	
 	//Accomodations
 	function getAllAccomodations() {
-		return jsonRequester.get('http://touristsites.azurewebsites.net/api/Accomodations')
+		return jsonRequester.get(baseUrl + 'api/Accomodations')
 			.then(function (res) {
 				return res.result;
 			});
@@ -50,7 +52,7 @@ var data = (function () {
             }
         };
         
-        return jsonRequester.post('http://localhost:49502/api/Account/Register', options)
+        return jsonRequester.post(baseUrl + 'api/Account/Register', options)
             .then(function (res) {
                return res; 
             });
@@ -67,7 +69,7 @@ var data = (function () {
             
       var promise = new Promise(function(resolve, reject) {
       $.ajax({
-        url: 'http://localhost:49502/Token',
+        url: baseUrl + 'Token',
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         data: data,
@@ -81,11 +83,6 @@ var data = (function () {
     });
     
     return promise;
-        
-        // return jsonRequester.post('http://localhost:49502/Token', options)
-        //     .then(function (res) {
-        //        return res; 
-        //     });
     }
 
 
