@@ -73,13 +73,15 @@ a:hover, a:focus {
 .btn-map{
 	display: inline-block;
 	background-image: url('../img/RouteMap.png');
+	background-size: 150px 100px;
 	width: 150px;
 	height: 100px;
 }
 
-.btn-login{
+#btn-login{
 	display: inline-block;
 	background-image: url('../img/login.png');
+	background-size: 130px 90px;
 	width: 130px;
 	height: 90px;
 }

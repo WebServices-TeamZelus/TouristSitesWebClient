@@ -5,7 +5,7 @@
     
     localStorage.clear();
     
-    var loginButton = $('.btn-login');
+    var loginButton = $('#btn-login');
     
    data.images.getAll().then(function(res) {
         images = res;
