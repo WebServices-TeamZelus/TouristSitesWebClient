@@ -13,6 +13,24 @@
      				}
      			} );
         });
+        
+    $('.btn-login').on('click', function () {
+        var template = templates.get('loginTemplate');
+        var formContainer = $('.loginForm');
+        formContainer.html(template(''));
+        $('#loginForm').submit(function (ev) {
+            ev.preventDefault();
+            var email = $('#emailInput').val();
+            var pass = $('#passInput').val();
+            data.users.register(email, pass)
+                .then(function (res) {
+                    console.log('register success' + res['access_token']);
+                    formContainer.html('');
+                },function (rej) {
+                    console.log('register faild ' + rej['Message']);
+                });
+        });
+    });
 
     //$('.btn-login').on('click', function() {
     //    console.log("pesho");
