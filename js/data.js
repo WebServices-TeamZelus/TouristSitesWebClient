@@ -1,6 +1,6 @@
 var data = (function () {
 
-    var baseUrl = 'http://bgtouristsites.azurewebsites.net/';
+    var baseUrl = 'http://touristsites.azurewebsites.net/';
 
 	// Images
 	function getAllImages() {
