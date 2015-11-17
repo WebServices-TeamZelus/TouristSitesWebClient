@@ -72,13 +72,16 @@ a:hover, a:focus {
 }
 .btn-map{
 	display: inline-block;
-
+	background-image: url('../img/RouteMap.png');
+	width: 150px;
+	height: 100px;
 }
 
 .btn-login{
 	display: inline-block;
-
-
+	background-image: url('../img/login.png');
+	width: 130px;
+	height: 90px;
 }
 
 /* To Navigation Style */
