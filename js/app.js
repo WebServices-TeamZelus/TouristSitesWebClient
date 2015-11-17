@@ -6,6 +6,16 @@
     localStorage.clear();
     
     var loginButton = $('#btn-login');
+
+    var loginButton = $('#btn-login'),
+        mapButton = $('#btn-map');
+
+    mapButton.on('click', function(){
+        $('svg').first().hide();
+        $('h1').first().hide();
+        $('#header-id').removeClass('codrops-header').addClass('map');
+        $(this).hide();
+    });
     
    data.images.getAll().then(function(res) {
         images = res;

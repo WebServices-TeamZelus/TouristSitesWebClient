@@ -45,6 +45,7 @@ a:hover, a:focus {
 	padding: 9em 2em;
 	text-align: center;
 	background-image: url("../img/17.jpg");
+	background-size: 100% 100%;
 	color: #f2f8f8;
 	position: relative;
 	overflow: hidden;
@@ -70,7 +71,7 @@ a:hover, a:focus {
 	left: 450px;
 	padding-bottom: 50px;
 }
-.btn-map{
+#btn-map{
 	display: inline-block;
 	background-image: url('../img/RouteMap.png');
 	background-size: 150px 100px;

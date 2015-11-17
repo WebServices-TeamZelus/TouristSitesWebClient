@@ -12,6 +12,18 @@ img {
 	width: 100%;
 }
 
+.map{
+	text-align: center;
+	background-image: url('../img/maps-bg.jpg');
+	background-size: 80% 100%;
+	background-repeat: no-repeat;
+	background-position: 150px 0;
+	height: 750px;
+	margin-top: -80px;
+	margin-bottom: -100px;
+	width: 100%;
+}
+
 .photostack {
 	background: #ddd;
 	position: relative;
