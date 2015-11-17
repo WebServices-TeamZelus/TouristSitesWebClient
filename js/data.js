@@ -38,6 +38,42 @@ var data = (function () {
 				return res.result;
 			});
 	}
+    
+    
+    //Users
+    function register(email, password) {
+        var options = {
+            data: {
+                'Email': email,
+                'password': password,
+                'ConfirmPassword': password
+            }
+        };
+        
+        return jsonRequester.post('http://touristsites.azurewebsites.net/api/Account/Register', options)
+            .then(function (res) {
+               return res; 
+            });
+    }
+    
+    
+    function login(email, password) {
+         var options = {
+            data: {
+                'username': email,
+                'password': password,
+                'grant_type': 'password'
+            },
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded'
+            }
+        };
+        
+        return jsonRequester.post('http://touristsites.azurewebsites.net/Token', options)
+            .then(function (res) {
+               return res; 
+            });
+    }
 
 
 	return {
@@ -53,7 +89,11 @@ var data = (function () {
 		},
 		accomodations: {
 			getAll: getAllAccomodations
-		}
+		},
+        users: {
+            register: register,
+            login: login
+        }
 	}
 
 } ());
