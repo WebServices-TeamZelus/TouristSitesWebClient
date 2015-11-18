@@ -6,7 +6,7 @@
     localStorage.clear();
 
     var touristObj;
-    var loginButton = $('#btn-login');
+    //var loginButton = $('#btn-login');
 
     var loginButton = $('#btn-login'),
         mapButton = $('#btn-map');
@@ -77,9 +77,12 @@
     });
 
     function touristSiteTemplate(id) {
+
         data.touristSites.getById(id).then(function(res) {
+            console.log(id);
             touristObj = res;
-            images = touristObj.Images;
+            console.log(res);
+            //images = touristObj.Images;
             return templates.get('touristSiteTemplate');
         })
             .then(function(template) {
@@ -119,7 +122,7 @@
     }
 
     $('.test').on('click', function (ev) {
-        touristSiteTemplate(1);
+        touristSiteTemplate('1');
     });
 
 }());
