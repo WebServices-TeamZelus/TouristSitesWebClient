@@ -9,6 +9,31 @@ var data = (function () {
 				return res;
 			});
 	}
+    
+    function uploadImage(data, touristSiteId, token) {
+		var promise = new Promise(function (resolve, reject) {
+        var url = baseUrl + 'api/images';
+
+        $.ajax(url, {
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                'Autorization': 'Bearer ' + token,
+                "touristSiteId": touristSiteId
+            },
+            data: data,
+            success: function (res) {
+                resolve(res);
+            },
+            error: function (err) {
+                reject(err);
+            }
+        });
+    });
+
+    return promise
+	}
 
 	// TouristSites
 	function getAllTouristSites() {
