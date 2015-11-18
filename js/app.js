@@ -53,7 +53,7 @@
                     localStorage.setItem(LOCAL_STORAGE_USERNAME_KEY, email);
                     localStorage.setItem(LOCAL_STORAGE_AUTHKEY_KEY, res['access_token']);
                     toastr.success('Successfully logged in');
-                    loginButton.append('<div id="greetingDiv">Hello ' + email + '</div>');
+                    loginButton.parent().append('<div id="greetingDiv">Hello ' + email + '</div>');
                     formContainer.html('');
                 },function (rej) {
                     toastr.error('Invalid Username or Passoword');
