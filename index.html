@@ -11,11 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 		<link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/chat.css">
         <link href="bower_components/toastr/toastr.css" rel="stylesheet"/>
 		<script src="js/modernizr.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
+        
 			<!-- Top Navigation -->
 			<header id="header-id" class="codrops-header">
 				<svg id="header-img" class="polaroid">
@@ -27,6 +29,7 @@
 				<div class="btn">
 				<div id="btn-map"></div>
 				<div id="btn-login"></div>
+                <div id="btn-chat"></div>
 			</div>
 				<div class="loginForm">
 
@@ -51,7 +54,17 @@
 				</ul>
 
 			</section>
+            
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+            <textarea id="msg-container" readonly></textarea>
+            <div id="msg-input">
+                 <input id="chat-input" type="text" placeholder="Enter your message">
+                 <button id="btn-send" type="submit">Send</button>
+            </div>
+        </nav>
 		</div><!-- /container -->
+        
+        <script src="http://cdn.pubnub.com/pubnub-3.7.15.min.js"></script>
 		<script src="bower_components/handlebars/handlebars.js"></script>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/toastr/toastr.js"></script>
@@ -60,6 +73,7 @@
 		<script src="js/jsonRequester.js"></script>
 		<script src="js/data.js"></script>
 		<script src="js/templates.js"></script>
+		<script src="js/chat.js"></script>
 		<script src="js/app.js"></script>
 	<script id= "galery" type="text/x-handlebars">
 		<div>

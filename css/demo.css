@@ -87,6 +87,14 @@ a:hover, a:focus {
 	height: 90px;
 }
 
+#btn-chat {
+    display: inline-block;
+	background-image: url('../img/chat.png');
+	background-size: 130px 90px;
+	width: 130px;
+	height: 90px;
+}
+
 /* To Navigation Style */
 .codrops-top {
 	background: #444;
