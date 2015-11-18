@@ -1,13 +1,16 @@
-var menuRight = $('#cbp-spmenu-s2'),
-    showChat = $('#btn-chat'),
-    LOCAL_STORAGE_USERNAME_KEY = 'signed-in-user-username';
+(function () {
+
+    var menuRight = $('#cbp-spmenu-s2'),
+        showChat = $('#btn-chat'),
+        LOCAL_STORAGE_USERNAME_KEY = 'signed-in-user-username';
 
 
-showChat.on('click', function () {
-    showChat.toggleClass('active');
-    menuRight.toggleClass('cbp-spmenu-open');
+    showChat.on('click', function () {
+        showChat.toggleClass('active');
+        menuRight.toggleClass('cbp-spmenu-open');
+    });
 
-// for the chat
+    // for the chat
     var sendButton = $('#btn-send');
     var inputField = $('#chat-input');
     var messageContainer = $('#msg-container');
@@ -23,7 +26,7 @@ showChat.on('click', function () {
         var username = localStorage[LOCAL_STORAGE_USERNAME_KEY] || 'guest';
         pubnub.publish({
             channel: 'my_channel',
-            message: username + ': ' +  messageValue,
+            message: username + ': ' + messageValue,
             callback: function (m) { }
         });
     });
@@ -44,4 +47,4 @@ showChat.on('click', function () {
             sendButton.click();
         }
     });
-});
+} ());
