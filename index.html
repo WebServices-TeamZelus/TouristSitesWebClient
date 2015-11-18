@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div class="container">
-        
+			<button class="test">touristSites</button>
 			<!-- Top Navigation -->
 			<header id="header-id" class="codrops-header">
 				<svg id="header-img" class="polaroid">
@@ -105,5 +105,48 @@
 </div>
 </div>
     </script>
+		<script id="touristSiteTemplate" type="text/x-handlebars">
+			<header class="codrops-header">
+				<div id="header-img" width="1000px" height="300px" class="polaroid"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 300" >
+
+				</div>
+				<h1>{{this.Name}} <span>Web Services Team "Zelus"</span></h1>
+			</header>
+			<div id="imageLoad">
+				<form>
+					<label for="image">Photo</label>
+					<input id="url-image" type="file" accept="image/*" />
+					<br><br>
+					<input id="submit-image" type="submit" value="Submit">
+				</form>
+			</div>
+			<div class="description">
+				<div class="btn">
+					<div class="btn-map">
+						<input type="image" src="img/RouteMap.png" alt="Submit" width=150px" height="100x">
+					</div>
+					<div class="btn-login">
+						<input type="image" src="img/login.png" alt="Submit" width="130" height="90">
+					</div>
+				</div>
+				<div class="loginForm">
+
+				</div>
+				<p>{{this.Description}}</p>
+			</div>
+			<section id="photostack-1" class="photostack photostack-start">
+
+			</section>
+			<section class="related">
+				<h3>Create:</h3>
+				<ul>
+					<li>Димитър Топалов - "topalkata"</li>
+					<li>Илияна Антова - "iliant"</li>
+					<li>Кристина Йовева - "KYoveva"</li>
+					<li>Любомир Свиленов - "LSvilenov"</li>
+					<li>Николай Атанасов - "ni4ka7a"</li>
+				</ul>
+			</section>
+		</script>
 	</body>
 </html>

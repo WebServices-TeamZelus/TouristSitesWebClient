@@ -113,7 +113,8 @@ var data = (function () {
 
 	return {
 		images: {
-			getAll: getAllImages
+			getAll: getAllImages,
+            addImage: uploadImage
 		},
 		touristSites: {
 			getAll: getAllTouristSites,
