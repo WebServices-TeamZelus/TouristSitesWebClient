@@ -39,14 +39,14 @@ var data = (function () {
 	function getAllTouristSites() {
 		return jsonRequester.get(baseUrl + 'api/TouristSites')
 			.then(function (res) {
-				return res.result;
+				return res;
 			});
 	}
 	
 	function getTouristSitesById(id) {
 		return jsonRequester.get(baseUrl + 'api/TouristSites/' + id)
 			.then(function (res) {
-				return res.result;
+				return res;
 			});
 	}
 	
@@ -54,7 +54,7 @@ var data = (function () {
 	function getAllCities() {
 		return jsonRequester.get(baseUrl + 'api/Cities')
 			.then(function (res) {
-				return res.result;
+				return res;
 			});
 	}
 	
@@ -62,7 +62,7 @@ var data = (function () {
 	function getAllAccomodations() {
 		return jsonRequester.get(baseUrl + 'api/Accomodations')
 			.then(function (res) {
-				return res.result;
+				return res;
 			});
 	}
     
