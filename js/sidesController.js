@@ -6,15 +6,13 @@ var sidesController = (function touristSiteTemplate() {
     function getCurrentSide(id) {
         data.touristSites.getById(id).then(function (res) {
             touristObj = res;
-            console.log(touristObj);
-            images = new Array(touristObj.Images);
-            console.log("Drugiiii" + images);
+            images = touristObj['Images'];
             return templates.get('touristSiteHeader');
         })
             .then(function (template) {
                 $('#headerTemplates').html(template(touristObj));
                 var img = images[0];
-                $('.codrops-header').css('background-image', "\'url(" + img + ")\'");
+                $('.codrops-header').css('background-image', 'url('+ img + ')');
                 return templates.get('touristSiteDiscriptions');
             })
             .then(function (template) {
@@ -22,8 +20,16 @@ var sidesController = (function touristSiteTemplate() {
                 return templates.get('galery');
             })
             .then(function (template) {
-                 console.log("Towa e >>>>>>>>>"+images);
-                $('#photostack-1').html(template(images));
+                var imagesForTemplate = [];
+                for (var index = 0; index < images.length; index++) {
+                    imagesForTemplate[index] = {
+                    
+                        'Url': images[index]
+                    };
+                }
+                
+                
+                $('#photostack-1').html(template(imagesForTemplate));
                 [].slice.call(document.querySelectorAll('.photostack')).forEach(function (el) { new Photostack(el); });
                 new Photostack(document.getElementById('photostack-1'), {
                     callback: function (item) {

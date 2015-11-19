@@ -4,8 +4,13 @@
 
 
 
-    $('#photostack-1').on('click', 'figure a', function (ev) {
-        var siteId = $(ev.target).attr('siteId');
+    $('#photostack-1').on('click', 'figure', function (ev) {
+        var siteId = $(ev.target)
+        .parent('figure')
+        .attr('siteId');
+        
+        console.log(this);
+        
       sidesController.getCurrentSide(siteId);
         console.log(siteId);
     });
