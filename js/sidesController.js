@@ -1,5 +1,5 @@
 var sidesController = (function touristSiteTemplate() {
-
+    
     function getCurrentSide(id) {
         data.touristSites.getById(id).then(function (res) {
             touristObj = res;

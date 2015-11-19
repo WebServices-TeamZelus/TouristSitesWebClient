@@ -2,8 +2,11 @@
     
    homeController.getHomePage();
 
-    $('.test').on('click', function (ev) {
-        sidesController.getCurrentSide(1);
+
+
+    $('#photostack-1').on('click', 'figure a', function (ev) {
+        // sidesController.getCurrentSide(1);
+        console.log(ev.target);
     });
 
 }());

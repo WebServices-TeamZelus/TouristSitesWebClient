@@ -17,7 +17,6 @@
 	</head>
 	<body>
 		<div class="container">
-			<button class="test">touristSites</button>
 			<!-- Top Navigation -->
 			<header id="header-id" class="codrops-header">
 				<svg id="header-img" class="polaroid">
@@ -90,7 +89,7 @@
 		<div>
 		{{#each this}}
 		<figure>
-		<a class="photostack-img"><img src={{this.Url}} /></a>
+		<a class="photostack-img" sideName="{{this.TouristSiteName}}"><img src={{this.Url}} /></a>
 		<figcaption>
 		<h2 class="photostack-title">{{this.TouristSiteName}}</h2>
 		</figcaption>
