@@ -1,7 +1,9 @@
 var sidesController = (function touristSiteTemplate() {
 
     var touristObj,
-        images;
+        images,
+        LOCAL_STORAGE_USERNAME_KEY = 'signed-in-user-username',
+        LOCAL_STORAGE_AUTHKEY_KEY = 'signed-in-user-auth-key';
 
     function getCurrentSide(id) {
         data.touristSites.getById(id).then(function (res) {
@@ -12,7 +14,7 @@ var sidesController = (function touristSiteTemplate() {
             .then(function (template) {
                 $('#headerTemplates').html(template(touristObj));
                 var img = images[0];
-                $('.codrops-header').css('background-image', 'url('+ img + ')');
+                $('.codrops-header').css('background-image', 'url(' + img + ')');
                 return templates.get('touristSiteDiscriptions');
             })
             .then(function (template) {
@@ -23,12 +25,13 @@ var sidesController = (function touristSiteTemplate() {
                 var imagesForTemplate = [];
                 for (var index = 0; index < images.length; index++) {
                     imagesForTemplate[index] = {
-                    
-                        'Url': images[index]
+                        'TouristSiteName' : touristObj.Name,
+                        'Url': images[index],
+                        'TouristSiteId': id
                     };
                 }
-                
-                
+
+
                 $('#photostack-1').html(template(imagesForTemplate));
                 [].slice.call(document.querySelectorAll('.photostack')).forEach(function (el) { new Photostack(el); });
                 new Photostack(document.getElementById('photostack-1'), {
@@ -41,15 +44,26 @@ var sidesController = (function touristSiteTemplate() {
                 $('#imageLoad').css('display', 'block');
 
                 $('#submit-image').on('click', function (ev) {
-                    var url = $('#url-image').val();
-                    console.log(url);
-                    data.images.addImage(url, touristObj.Id, LOCAL_STORAGE_AUTHKEY_KEY)
-                        .then(function (res) {
-                            toastr.success('Successfully upload picture');
-                        }, function (rej) {
-                            toastr.error('Failed upload image');
-                            console.log('register faild ' + rej['Message']);
-                        });
+                    var data = new FormData();
+                    var files = $('#url-image').get(0).files;
+                    // var url = $('#url-image').val();
+                    if (files.length > 0) {
+                        data.append("MyImage", files[0]);
+                        var userId = localStorage[LOCAL_STORAGE_AUTHKEY_KEY] || 1;
+                        
+                        // data.images.addImage(data, id, LOCAL_STORAGE_AUTHKEY_KEY)
+                        //     .then(function (res) {
+                        //         toastr.success('Successfully upload picture');
+                        //     }, function (rej) {
+                        //         toastr.error('Failed upload image');
+                        //         console.log('register faild ' + rej['Message']);
+                        //     });
+                    }
+
+                    else {
+                        toastr.error('Invalid image file!');
+
+                    }
                 });
 
             });
