@@ -116,7 +116,7 @@ a:hover, a:focus {
 
 .btn {
 	position: relative;
-	left: 450px;
+	left: 27%;
 	padding-bottom: 50px;
 }
 #btn-map{
@@ -142,7 +142,13 @@ a:hover, a:focus {
 	width: 130px;
 	height: 90px;
 }
-
+#btn-home {
+	display: inline-block;
+	background-image: url('../img/accomodation.png');
+	background-size: 130px 90px;
+	width: 130px;
+	height: 90px;
+}
 /* To Navigation Style */
 .codrops-top {
 	background: #444;
