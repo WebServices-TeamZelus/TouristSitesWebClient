@@ -66,6 +66,54 @@ a:hover, a:focus {
 	font-size: 60%;
 	opacity: 0.7;
 }
+#imageLoad{
+	display: none;
+	position: relative;
+	margin-top: 50px;
+	margin-left: 40%;
+}
+#uploadText{
+	font-family: 'Trebuchet MS', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #D0D0D0 ;
+	text-shadow: 0px 1px 1px rgba(0,0,0, .65);
+	padding-bottom: 2px;
+	border-bottom: 1px solid #7a7b80;
+}
+
+#imageLoad .button {
+	display: inline-block;
+	height: 30px;
+	margin: 15px 0;
+
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #777;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 30px;
+
+	background: #ffffff;
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 100%);
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 100%);
+	background: linear-gradient(top, #ffffff 0%, #f6f6f6 100%);
+}
+
+#imageLoad .button:hover {
+	background: #f2f2f2;
+	background: -webkit-linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
+	background: -moz-linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
+	background: -o-linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
+	background: -ms-linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
+	background: linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
+}
+
 .btn {
 	position: relative;
 	left: 450px;
