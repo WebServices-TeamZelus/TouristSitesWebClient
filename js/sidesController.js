@@ -25,8 +25,9 @@ var sidesController = (function touristSiteTemplate() {
                 var imagesForTemplate = [];
                 for (var index = 0; index < images.length; index++) {
                     imagesForTemplate[index] = {
-
-                        'Url': images[index]
+                        'TouristSiteName' : touristObj.Name,
+                        'Url': images[index],
+                        'TouristSiteId': id
                     };
                 }
 
