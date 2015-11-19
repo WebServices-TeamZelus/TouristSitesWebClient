@@ -25,7 +25,7 @@ var sidesController = (function touristSiteTemplate() {
                 var imagesForTemplate = [];
                 for (var index = 0; index < images.length; index++) {
                     imagesForTemplate[index] = {
-                        'TouristSiteName' : touristObj.Name,
+                        'TouristSiteName': touristObj.Name,
                         'Url': images[index],
                         'TouristSiteId': id
                     };
@@ -40,24 +40,24 @@ var sidesController = (function touristSiteTemplate() {
                 });
             })
             .then(function () {
-                // if (localStorage.getItem(LOCAL_STORAGE_USERNAME_KEY) != undefined){
-                $('#imageLoad').css('display', 'block');
-
+                if (localStorage.getItem(LOCAL_STORAGE_USERNAME_KEY) != undefined) {
+                    $('#imageLoad').css('display', 'block');
+                }
                 $('#submit-image').on('click', function (ev) {
-                    var data = new FormData();
-                    var files = $('#url-image').get(0).files;
-                    // var url = $('#url-image').val();
+                    var imageData = new FormData();
+                    var files = $('#file-input').get(0).files;
+
                     if (files.length > 0) {
-                        data.append("MyImage", files[0]);
-                        var userId = localStorage[LOCAL_STORAGE_AUTHKEY_KEY] || 1;
+                        imageData.append("MyImage", files[0]);
+                        var token = localStorage[LOCAL_STORAGE_AUTHKEY_KEY];
                         
-                        // data.images.addImage(data, id, LOCAL_STORAGE_AUTHKEY_KEY)
-                        //     .then(function (res) {
-                        //         toastr.success('Successfully upload picture');
-                        //     }, function (rej) {
-                        //         toastr.error('Failed upload image');
-                        //         console.log('register faild ' + rej['Message']);
-                        //     });
+                        data.images.addImage(imageData, id, token)
+                            .then(function (res) {
+                                toastr.success('Successfully upload picture');
+                            }, function (rej) {
+                                toastr.error('Failed upload image');
+                                console.log('register faild ' + rej['Message']);
+                            });
                     }
 
                     else {
