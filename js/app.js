@@ -22,7 +22,7 @@
 			});
 
 			localSites.forEach(function(item){
-				$('#hover-1').css('display', 'block').append($('<div class="ts-item" ts-id="' + item.TouristSiteId + '">' + item.Name + '</div>').click(function(){
+				$('#hover-1').show().append($('<div class="ts-item" ts-id="' + item.TouristSiteId + '">' + item.Name + '</div>').click(function(){
 					unpin();
 					$('#pin1').trigger('mouseleave');
 					$('#header-id').removeClass('map').addClass('codrops-header');
@@ -34,7 +34,7 @@
 		});
 
 		$('#pin1').mouseleave(function(){
-			$('#hover-1').empty();
+			$('#hover-1').empty().hide();
 		});
 
 		$('#pin2').mouseenter(function(){
