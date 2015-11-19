@@ -70,7 +70,7 @@ a:hover, a:focus {
 	display: none;
 	position: relative;
 	margin-top: 50px;
-	margin-left: 40%;
+	margin-left: 27%;
 }
 #uploadText{
 	font-family: 'Trebuchet MS', sans-serif;
@@ -114,9 +114,46 @@ a:hover, a:focus {
 	background: linear-gradient(top, #f2f2f2 0%, #eaeaea 100%);
 }
 
+div.upload {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	margin: 10px;
+	width: 157px;
+	height: 57px;
+	background: url('../img/upload.png');
+	background-repeat: no-repeat;
+
+}
+
+div.upload input {
+	display: block;
+	width: 150px;
+	height: 50px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+div.submit {
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	background: url('../img/submit.jpg');
+	background-repeat: no-repeat;
+
+}
+
+div.submit input {
+	display: block;
+	width: 157px;
+	height: 57px;
+	opacity: 0;
+	overflow: hidden;
+}
+
 .btn {
 	position: relative;
-	left: 27%;
+	left: 10%;
 	padding-bottom: 50px;
 }
 #btn-map{
