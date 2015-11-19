@@ -14,6 +14,35 @@
         }
 
         setTimeout(pins, 100);
+
+        $('#pin1').mouseenter(function(){
+        	$(this).append($('#hover-1'));
+			var localSites = touristSites.filter(function(item){
+				return item.CityId === 1;
+			});
+
+			localSites.forEach(function(item){
+				$('#hover-1').css('display', 'block').append($('<div class="ts-item" ts-id="' + item.TouristSiteId + '">' + item.Name + '</div>').click(function(){
+					unpin();
+					$('#pin1').trigger('mouseleave');
+					$('#header-id').removeClass('map').addClass('codrops-header');
+					$('svg').first().show();
+        			$('h1').first().show();        			
+					sidesController.getCurrentSide($(this).attr('ts-id'));
+				}));
+			});
+		});
+
+		$('#pin1').mouseleave(function(){
+			$('#hover-1').empty();
+		});
+    });
+
+    var touristSitesPromise = data.touristSites.getAll();
+    var touristSites; 
+
+    touristSitesPromise.then(function(res){
+    	touristSites = res;
     });
 
     function pins(){
@@ -23,6 +52,18 @@
 		transitions.moveToY('pin4', 800, 1500, "370px");
 		transitions.moveToY('pin5', 900, 1500, "183px");
     }
+
+    function unpin(){
+    	transitions.moveToY('pin1', 0, 0, "-100px");
+		transitions.moveToY('pin2', 0, 0, "-100px");
+		transitions.moveToY('pin3', 0, 0, "-100px");
+		transitions.moveToY('pin4', 0, 0, "-100px");
+		transitions.moveToY('pin5', 0, 0, "-100px");
+    }
+
+
+
+    	
 
     $('#photostack-1').on('click', 'figure', function (ev) {
         var siteId = $(this)

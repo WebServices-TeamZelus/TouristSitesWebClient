@@ -17,6 +17,26 @@ img {
 	width: 100%;
 }
 
+#hover-1{
+	display: none;
+	width: 250px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: white;
+}
+
+.ts-item{
+	padding-left: 10px;
+	height: 20px;
+	background-color: black;
+	color: white;
+}
+
+.ts-item:hover {
+	text-decoration: underline;
+}
+
 #pin1 {
 	position: absolute;
 	width: 58px;
