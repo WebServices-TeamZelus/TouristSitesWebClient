@@ -25,14 +25,9 @@
     }
 
     $('#photostack-1').on('click', 'figure', function (ev) {
-        var siteId = $(ev.target)
-        .parent('figure')
+        var siteId = $(this)
         .attr('siteId');
-        
-        console.log(this);
-        
       sidesController.getCurrentSide(siteId);
-        console.log(siteId);
     });
 
 }());
