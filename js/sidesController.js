@@ -1,13 +1,19 @@
 var sidesController = (function touristSiteTemplate() {
-    
+
+    var touristObj,
+        images;
+
     function getCurrentSide(id) {
         data.touristSites.getById(id).then(function (res) {
             touristObj = res;
+            console.log(touristObj);
+            images = new Array(touristObj.Images);
+            console.log("Drugiiii" + images);
             return templates.get('touristSiteHeader');
         })
             .then(function (template) {
                 $('#headerTemplates').html(template(touristObj));
-                var img = images[0].Url;
+                var img = images[0];
                 $('.codrops-header').css('background-image', "\'url(" + img + ")\'");
                 return templates.get('touristSiteDiscriptions');
             })
@@ -16,9 +22,8 @@ var sidesController = (function touristSiteTemplate() {
                 return templates.get('galery');
             })
             .then(function (template) {
-                var imageTouristsite = images.filter(function (i) { return i.TouristSiteName == touristObj.Name; });
-                console.log(imageTouristsite);
-                $('#photostack-1').html(template(imageTouristsite));
+                 console.log("Towa e >>>>>>>>>"+images);
+                $('#photostack-1').html(template(images));
                 [].slice.call(document.querySelectorAll('.photostack')).forEach(function (el) { new Photostack(el); });
                 new Photostack(document.getElementById('photostack-1'), {
                     callback: function (item) {
