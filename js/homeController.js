@@ -41,6 +41,7 @@ var homeController = (function () {
                 localStorage.removeItem(LOCAL_STORAGE_USERNAME_KEY);
                 localStorage.clear(LOCAL_STORAGE_AUTHKEY_KEY);
                 $('#greetingDiv').remove();
+                $('#btn-login').css('background-image', 'url(img/login.png)');
                 toastr.success('Successfully logged out');
             }
 
@@ -57,6 +58,7 @@ var homeController = (function () {
                         .then(function (res) {
                             localStorage.setItem(LOCAL_STORAGE_USERNAME_KEY, email);
                             localStorage.setItem(LOCAL_STORAGE_AUTHKEY_KEY, res['access_token']);
+                            $('#btn-login').css('background-image', 'url(img/logout.jpg)');
                             toastr.success('Successfully logged in');
                             loginButton.parent().append('<div id="greetingDiv">Hello ' + email + '</div>');
                             formContainer.html('');
