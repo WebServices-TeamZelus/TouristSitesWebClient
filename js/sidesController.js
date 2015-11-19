@@ -13,7 +13,7 @@ var sidesController = (function touristSiteTemplate() {
         })
             .then(function (template) {
                 $('#headerTemplates').html(template(touristObj));
-                var img = images[0];
+                var img = images[Math.floor((Math.random() * images.length))];
                 $('.codrops-header').css('background-image', 'url(' + img + ')');
                 return templates.get('touristSiteDiscriptions');
             })

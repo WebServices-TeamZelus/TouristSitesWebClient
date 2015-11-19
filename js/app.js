@@ -2,12 +2,19 @@
     
    homeController.getHomePage();
 
-   var mapButton = $('#btn-map');
+   var mapButton = $('#btn-map'),
+    homeButton = $('#btn-home');
+    
+    homeButton.on('click', function () {
+       homeController.getHomePage();
+    });
 
     mapButton.on('click', function() {
         $('svg').first().hide();
         $('h1').first().hide();
-        $('#header-id').removeClass('codrops-header').addClass('map');
+        $('#header-id').removeClass('codrops-header').addClass('map')
+        .css('background-image', 'url(img/maps-bg.jpg)');
+
         $(this).hide();
         for (var i = 0; i < 5; i++) {
         	$('<div />').attr('id', 'pin' + (i + 1)).appendTo($('.container').first());

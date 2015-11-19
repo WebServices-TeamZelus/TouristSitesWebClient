@@ -3,10 +3,20 @@ var homeController = (function () {
     function getHomePage() {
         var images,
             LOCAL_STORAGE_USERNAME_KEY = 'signed-in-user-username',
-            LOCAL_STORAGE_AUTHKEY_KEY = 'signed-in-user-auth-key';
+            LOCAL_STORAGE_AUTHKEY_KEY = 'signed-in-user-auth-key',
+            initialText = 'Visiting our catalog for tourism is a good opportunity ' +
+            'to make a virtual online tour to discover interesting places, different ' +
+            'resorts, sightseeing and landmarks in Bulgaria. Discover the beauty of Bulgaria !'
 
-        localStorage.clear();
-
+        // localStorage.clear();
+        var header = $('#header-id');
+        header.css('background-image', 'url(img/17.jpg)');
+        header.find('h1').text('Bulgaria Touristsites')
+            .append($('<span></span>').text('Web Services Team "Zelus"'));
+            
+        $('#discriptionTemplates')
+            .find('p').text(initialText)
+            
         var touristObj;
 
         $('#btn-map').show();
