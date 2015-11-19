@@ -19,7 +19,7 @@ var data = (function () {
             contentType: false,
             processData: false,
             headers: {
-                'Autorization': 'Bearer ' + token,
+                'Authorization': 'Bearer ' + token,
                 "touristSiteId": touristSiteId
             },
             data: data,
