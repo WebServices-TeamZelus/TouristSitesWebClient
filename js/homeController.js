@@ -9,15 +9,9 @@ var homeController = (function () {
 
         var touristObj;
 
-        var loginButton = $('#btn-login'),
-            mapButton = $('#btn-map');
+        $('#btn-map').show();
 
-        mapButton.on('click', function () {
-            $('svg').first().hide();
-            $('h1').first().hide();
-            $('#header-id').removeClass('codrops-header').addClass('map');
-            $(this).hide();
-        });
+        var loginButton = $('#btn-login');
 
         data.images.getAll().then(function (res) {
             images = res;
