@@ -25,14 +25,9 @@
 				<div id="headerTemplates"><h1>Bulgaria Touristsites <span>Web Services Team "Zelus"</span></h1></div>
 			</header>
 			<div id="imageLoad">
-				<label id="uploadText" for="image">UPLOAD IMAGE</label>
-
-				<div class="upload">
-					<input type="file" name="upload" accept="image/*"/>
-				</div>
-				<div class="submit">
-					<input id="submit-image" class="button" type="submit" >
-				</div>
+								<label id="uploadText" for="image">UPLOAD IMAGE</label>
+					<input id="url-image" class="button" type="file" accept="image/*" />
+					<input id="submit-image" class="button" type="submit" value="Submit">
 			</div>
 			<div class="description">
 				<div class="btn">
@@ -101,7 +96,7 @@
 		<div>
 		{{#each this}}
 		<figure siteId="{{this.TouristSiteId}}">
-		<a class="photostack-img"><img src={{this.Url}} /></a>
+		<a class="photostack-img""><img src={{this.Url}} /></a>
 		<figcaption>
 		<h2 class="photostack-title">{{this.TouristSiteName}}</h2>
 		</figcaption>
