@@ -14,6 +14,8 @@ var homeController = (function () {
         header.find('h1').text('Bulgaria Touristsites')
             .append($('<span></span>').text('Web Services Team "Zelus"'));
             
+        $('#imageLoad').css('display', 'none');
+            
         $('#discriptionTemplates')
             .find('p').text(initialText)
             
