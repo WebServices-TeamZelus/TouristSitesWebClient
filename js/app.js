@@ -164,6 +164,7 @@
         var siteId = $(this)
         .attr('siteId');
       sidesController.getCurrentSide(siteId);
+      $('html, body').animate({scrollTop: '0px'}, 800);
     });
 
 }());
